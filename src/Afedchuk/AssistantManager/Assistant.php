@@ -12,16 +12,9 @@ class Assistant extends Model
 {
     use SoftDeletes;
 
-    /**
-     * Set the table associated with the model.
-     *
-     * @param  string  $table
-     * @return $this
-     */
-    public function setTable($table)
+    public function __construct(array $attributes = [])
     {
         $this->table = \Config::get( 'assistant-manager.users_table' );
-
-        return $this;
+        parent::__construct($attributes);
     }
 }
